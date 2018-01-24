@@ -24,20 +24,16 @@ Sys.setlocale("LC_ALL","English")
 png(file="plot4.png",width=480,height=480)
 par(mfrow = c(2,2))
 # picture on topleft
-with(ds, plot(ds$Datetime, Global_active_power, type = "s", xlab = "", 
+with(ds, plot(ds$Datetime, Global_active_power, type = "s", xlab = NA, 
               ylab = "Global Active Power(kilowatts)"))
 # picture on topright
 with(ds, plot(ds$Datetime, Voltage, type = "s", xlab = "datetime", ylab = "Voltage"))
 
 # picture on bottom left
-with(ds, plot(ds$Datetime, Sub_metering_1, type = "n", xlab = "", ylab = "Engergy sub metering"))
-with(ds, points(ds$Datetime, Sub_metering_1, type = "s", xlab = "", ylab = ""))
-with(ds, points(ds$Datetime, Sub_metering_2, type = "s", col = "red", xlab = "", ylab = ""))
-with(ds, points(ds$Datetime, Sub_metering_3, type = "s", col = "blue", xlab = "", ylab = ""))
-# The commented code is for screen device check
-#legend("topright", col = c("black", "red", "blue"), lty=c(1,1,1), ncol = 1, bty = "n",
-#       cex = 0.75, x.intersp = 0.5, y.intersp= 0.1, text.width = strwidth("legend"),
-#       legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+with(ds, plot(ds$Datetime, Sub_metering_1, type = "n", xlab = NA, ylab = "Engergy sub metering"))
+with(ds, points(ds$Datetime, Sub_metering_1, type = "s", xlab = NA, ylab = NA))
+with(ds, points(ds$Datetime, Sub_metering_2, type = "s", col = "red", xlab = NA, ylab = NA))
+with(ds, points(ds$Datetime, Sub_metering_3, type = "s", col = "blue", xlab = NA, ylab = NA))
 legend("topright", col = c("black", "red", "blue"), lty=c(1,1,1), ncol = 1, bty = "n",
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 

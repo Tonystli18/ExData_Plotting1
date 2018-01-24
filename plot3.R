@@ -26,10 +26,6 @@ with(ds, plot(ds$Datetime, Sub_metering_1, type = "n", xlab = NA, ylab = "Engerg
 with(ds, points(ds$Datetime, Sub_metering_1, type = "s", xlab = NA, ylab = NA))
 with(ds, points(ds$Datetime, Sub_metering_2, type = "s", col = "red", xlab = NA, ylab = NA))
 with(ds, points(ds$Datetime, Sub_metering_3, type = "s", col = "blue", xlab = NA, ylab = NA))
-# The commented code is cor screen device check
-# legend("topright", col = c("black", "red", "blue"), lty=c(1,1,1), ncol = 1,
-#       cex = 0.75, x.intersp = 0.5, y.intersp=0.5, text.width = strwidth("legend"),
-#       legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 legend("topright", col = c("black", "red", "blue"), lty=c(1,1,1), ncol = 1,
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 dev.off()
