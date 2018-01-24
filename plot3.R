@@ -22,10 +22,10 @@ Sys.setlocale("LC_ALL","English")
 
 # Plot 3
 png(file="plot3.png",width=480,height=480)
-with(ds, plot(ds$Datetime, Sub_metering_1, type = "n", xlab = NA, ylab = "Engergy sub metering"))
-with(ds, points(ds$Datetime, Sub_metering_1, type = "s", xlab = NA, ylab = NA))
-with(ds, points(ds$Datetime, Sub_metering_2, type = "s", col = "red", xlab = NA, ylab = NA))
-with(ds, points(ds$Datetime, Sub_metering_3, type = "s", col = "blue", xlab = NA, ylab = NA))
+with(ds, plot(Datetime, Sub_metering_1, type = "n", xlab = NA, ylab = "Engergy sub metering"))
+with(ds, lines(Datetime, Sub_metering_1))
+with(ds, lines(Datetime, Sub_metering_2, col = "red"))
+with(ds, lines(Datetime, Sub_metering_3, col = "blue"))
 legend("topright", col = c("black", "red", "blue"), lty=c(1,1,1), ncol = 1,
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 dev.off()

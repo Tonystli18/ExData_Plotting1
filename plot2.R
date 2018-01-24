@@ -21,6 +21,6 @@ Sys.setlocale("LC_ALL","English")
 
 # Plot 2
 png(file="plot2.png",width=480,height=480)
-with(ds, plot(ds$Datetime, Global_active_power, type = "s", xlab = NA, 
+with(ds, plot(Datetime, Global_active_power, type = "s", xlab = NA, 
               ylab = "Global Active Power(kilowatts)"))
 dev.off()
