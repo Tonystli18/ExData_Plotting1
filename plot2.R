@@ -16,6 +16,9 @@ if (!exists("ds")){
     dt <- data.frame(Datetime = strptime(paste(ds$Date, ds$Time), format = "%d/%m/%Y %H:%M:%S"))
     ds <- cbind(dt, ds)
 }
+# Set locale to to be English
+Sys.setlocale("LC_ALL","English")
+
 # Plot 2
 png(file="plot2.png",width=480,height=480)
 with(ds, plot(ds$Datetime, Global_active_power, type = "s", xlab = "", 

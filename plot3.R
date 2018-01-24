@@ -16,12 +16,16 @@ if (!exists("ds")){
     dt <- data.frame(Datetime = strptime(paste(ds$Date, ds$Time), format = "%d/%m/%Y %H:%M:%S"))
     ds <- cbind(dt, ds)
 }
+
+# Set locale to to be English
+Sys.setlocale("LC_ALL","English")
+
 # Plot 3
 png(file="plot3.png",width=480,height=480)
-with(ds, plot(ds$Datetime, Sub_metering_1, type = "n", xlab = "", ylab = "Engergy sub metering"))
-with(ds, points(ds$Datetime, Sub_metering_1, type = "s", xlab = "", ylab = ""))
-with(ds, points(ds$Datetime, Sub_metering_2, type = "s", col = "red", xlab = "", ylab = ""))
-with(ds, points(ds$Datetime, Sub_metering_3, type = "s", col = "blue", xlab = "", ylab = ""))
+with(ds, plot(ds$Datetime, Sub_metering_1, type = "n", xlab = NA, ylab = "Engergy sub metering"))
+with(ds, points(ds$Datetime, Sub_metering_1, type = "s", xlab = NA, ylab = NA))
+with(ds, points(ds$Datetime, Sub_metering_2, type = "s", col = "red", xlab = NA, ylab = NA))
+with(ds, points(ds$Datetime, Sub_metering_3, type = "s", col = "blue", xlab = NA, ylab = NA))
 # The commented code is cor screen device check
 # legend("topright", col = c("black", "red", "blue"), lty=c(1,1,1), ncol = 1,
 #       cex = 0.75, x.intersp = 0.5, y.intersp=0.5, text.width = strwidth("legend"),
